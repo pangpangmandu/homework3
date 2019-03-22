@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+
+        </title>
+    </head>
+    <body>
+          
+        {% if result == 'white' %}
+            <img src = "{% static '/mta/white.jpg' %}">
+            <div class="red"> its white</div>
+        {% endif %}
+            {% if result == 'yellow' %}
+      <img src = "{% static '/mta/yellow.jpg' %}">
+        <div class="red"> its yellow</div>
+      {% endif %}   
+      {% if result == 'red' %}
+      <img src = "{% static '/mta/red.jpg' %}">
+        <div class="red"> its red</div>
+      {% endif %}
+      
+      {% if result == 'green' %}
+        <img src = "{% static '/mta/green.jpg' %}">
+        <div class="green"> its green </div>
+      {% endif %}  
+      {% if result == 'blue' %}
+        <img src = "{% static '/mta/blue.jpg' %}">
+        <div class="blue"> its blue </div>
+      {% endif %}  
+
+      {% if result == 'black' %}
+      <img src = "{% static '/mta/black.jpg' %}">
+        <div class="red"> its black</div>
+      {% endif %}
+
+      <form action="{% url 'main' %}" method="get">
+          <button >메인으로</button>
+      </form>
+
+    </body>
+</html>

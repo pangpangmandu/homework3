@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <p>
+                <form action="{% url 'new' %}" method="get">
+                      
+                        <button type="submit">팀 생성</button>
+                    </form>
+                    
+                <form action="{% url 'insult' %}" method="get">
+                      
+                        <button type="submit">게임시작</button>
+                </form>
+        </p>
+        <p>
+        팀 목록
+        {% for item in teams %}
+        <p> {{item.title}} 팀의 점수는 {{item.score}} </p>
+        <form action="{{ item.id }}/delete" method='POST'>
+            {% csrf_token %}
+            <button type="submit">삭제</button>
+          </form>
+        {% endfor %}
+        </p>
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+
+        </title>
+    </head>
+    <body>
+
+        <p>
+
+            
+                <form action="{% url 'result' %}" method="get">
+                        {% for t in teams %}
+                                <p>  {{t.title}} 팀의 카드:
+                        <input type="text" name="{{ t.title }}" >
+                                </p>
+                        {% endfor %}
+
+                        라운드 점수 : <input type="number" name = "score">
+                    <button type="submit">결과보기</button>
+                </form>
+            
+                    
+                    
+        </p>
+       
+
+    </body>
+</html>
